@@ -1,3 +1,99 @@
+                                                                MINI PROJECT - Gesture Robot Control
+ INTRODUCTION :
+ A Gesture Controlled robot is a robot which can be controlledby your hand gestures. You just need to have a smalltransmitting device in your hand, which included an
+acceleration meter to transmit an appropriate command to the robot so that it can do whatever we want. The transmitting device included an ADC for analogue to digital conversion
+and an encoder IC(HT12E) which is used to encode the fourbit data and then it will transmit by an RF Transmitter module. At the receiving end, an RF Receiver receives the
+encoded data and decoder IC decodes it. A microcontroller processes this data, and the motor driver is used to control the motors. signal for decision. The output from the accelerometer is
+gathered for the process by a microcontroller. According to the sensor output, the controller is made to work, and it sends the respective signal to the motors. It uses two DC motors to move,to drive them, one motor driver is IC used which
+provides sufficient current to motors. All this material is mounted on metal chassis. As we move our hand to the right robot will move to the right side.
+Robots are playing an essential role in automation across all sectors like construction, military, medical, manufacturing, etc. After making some basic robots like a line follower robot, a computer-controlled robot, etc.,
+we have developed this accelerometer-based gesture-controlled robot with an Arduino Uno. We have used hand gesture motion to drive the robot using an accelerometer. 
+A gesture-controlled robot is controlled by using the hand in place of any other method like buttons or joystick. Here one only needs to move the hand to operate the robot. A transmitting device is placed in the user's hand,
+which contains the RF Transmitter and accelerometer to transmit a command to the robot so that it can perform the required task of moving forward, back, turning left, right and stop. These tasks will be identified using the hand gesture. 
+Here the most crucial component is an accelerometer. An accelerometer is a 3-axis acceleration measurement device with +-3g range. This device is made by using a polysilicon surface sensor and signal conditioning circuit to measure acceleration.
+The output of this device is in Analog and also proportional to the acceleration. The device measures the static acceleration of gravity when tilted and gives a result in terms of 'g'. 
+ 
+ III. DESCRIPTION 
+ 
+A Gesture Controlled robot is a robot which can be controlled by your hand gestures. You just need to have a small transmitting device in your hand, which included an acceleration meter to transmit an appropriate command to the robot so that it 
+can do whatever we want. The transmitting device included an ADC for analogue to digital conversion and an encoder IC(HT12E) which is used to encode the fourbit data and then it will transmit by an RF Transmitter module. At the receiving end, 
+an RF Receiver receives the encoded data and decoder IC decodes it. A microcontroller processes this data, and the motor driver is used to control the motors. As the user moves his hand, it senses, and it sends the signal for decision.
+The output from the accelerometer is gathered for the process by a microcontroller. According to the sensor output, the controller is made to work, and it sends the respective signal to the motors. It uses two DC motors to move, to drive them,
+one motor driver is IC used which provides sufficient current to motors. All this material is mounted on metal chassis. As we move our hand to the right robot will move to the right side.  
+ 
+IV. WORKING PRINCIPLE 
+ 
+Our gesture-controlled robot works based on accelerometer outputs, which correspond to hand movements and sends that data to a comparator which assigns specific voltage level to the movements. This information is transferred to an encoder
+which encodes it before RF transmission. On the other end, the information is received wirelessly via RF. These decisions are sent to the motor driver, which triggers the motors in specific configurations to make the robot move in different directions. 
+V. HARDWARE REQUIREMENTS 
+ 
+MICROCONTROLLER (AT89S52) 
+ The AT89S8252 is a low power, high-performance CMOS 8-bit microcontroller with 8K bytes of in-system programmable Flash memory. It is associated with circuitry like Crystal with capacitors, Reset circuitry, Pull up resistors (if needed) and so on.
+ The microcontroller controls the devices being interfaced and communicates with the devices according to the program being written. Maintaining the Integrity of the Specifications 
+ 
+TRANSMITTER  
+The transmission section consists of three modules. They      are ADC Converter, Encoders, Accelerometer and an RF 
+Transmitter 
+ 
+POWER SUPPLY  
+The input to the circuit is from the regulated power supply— the AC input, i.e., 230V from the mains supply is stepped down using a transformer to 12V and is fed to a rectifier. The output got from a rectifier is a pulsating voltage. 
+The output voltage from the rectifier is given to a filter to remove any AC noise. Now, this voltage is given to a voltage-regulator to obtain a pure dc voltage. 
+ 
+VOLTAGE REGULATORS  
+Voltage regulator ICs come with fixed or varying output voltages. Most regulators include automatic protection from excessive current ('overload protection') and overheating ('thermal protection'). The LM7805 is easier to use, 
+you simply connect the positive of your DC power supply to an Input pin, connect the negative to the Common pin and then when you turn on the power, you get a 5-volt supply from the output pin. 
+ 
+ACCELEROMETER 
+ An accelerometer is a sensor for measuring acceleration, detecting and measuring vibrations, or for measuring acceleration due to gravity (inclination). Accelerometers can measure vibration on vehicles, buildings, process control system.
+ They are also used for measuring seismic activity, inclination, machine vibration, distance and speed with or without the influence of gravity. 
+ 
+HT12E  
+The HT12E is a 4-bit encoder which can encode the input data applied to it. It will convert the parallel inputs into serial output, encodes the 12-bit parallel data into serial for transmission through an RF transmitter.
+These 12 bits are divided into eight address bits and 4 data bits When the TE pin is triggered, the programmed addresses/data are transmitted with the header bits via an RF or infrared transmission. 
+ 
+RF-TRANSMITTER  
+The transmitter is an electronic device which converts measurements from a sensor into a signal, and sends it, via wired or wireless, to be received by a control device. The transmitter (Tx) operates at 434 MHz frequency
+which receives serial data and transmits it wirelessly through RF antenna. This transmission occurs at the rate of 1Kbps - 10Kbps. 
+ 
+RF RECEIVER  
+RF receivers are one of the easiest ways to add wireless control. It receives the data sent by the gesture device whose working is similar to the transmitter. The data pin is connected to the HT12D decoder. 
+ 
+HT12D  
+The HT12D converts the serial data to parallel data which is then received by the RF receiver. The input data is decoded if no error or unmatched codes are found. A valid transmission is marked through a high signal at Voltage Terminal pin. 
+ 
+ VI. 	WORKING 
+ 
+Gesture controlled robot moves according to the user's hand movement recognized by the device in our hand. When we tilt hand in front side, the robot starts to moving forward and continues moving forward until the next command is given. 
+When we tilt hand in the backside, the robot changes its state and start moving in the backwards direction until another command is given. When we tilt it towards the left side, it will turn left till next command. When we tilt our hand
+in right side robot is turned to the right.  
+  
+Circuit for this hand gesture-controlled robot is quite simple. 
+An RF pair is used for communication and connection to the Arduino. The motor driver is connected with the Arduino to operate the robot. Motor driver's input pins 2, 7, 10 and 15 are connected to Arduino digital PIN 6, 5, 4 and 3.
+Here we are using used two DC motors to drive the robot in which one motor is connected at the output of motor driver 3 and 6, and another motor is connected at 11 and 14. A 9-volt battery is also used to power the motor driver for driving motors. 
+ 
+ VII. RESULT 
+ 
+A Gesture Controlled robot with Arduino Uno microcontroller has been designed during this work, which may be controlled by human hand gestures. this needs to wear a little transmitting device on our hand included an accelerometer,
+which transmits particular commands to the robot to maneuver consistent with the users hand gesture and one receiver at the robot. The RF module usually works  at a frequency of 434MHZ and also it has a range of 100meters.
+The transmission occurs at the rate of 1Kbps-10Kbps. The transmitted data is received by the RF receiver operated at the same frequency as that of the transmitter. Transmission through RF(Radio frequency) is always better than 
+IR(Infrared) . 
+ 
+VIII. FUTURE SCOPE 
+ 
+•	In future we can design a wireless robot which can sense hand gesture by using wireless technologies. 
+•	It can be used in military applications as a robotic vehicle which can be handled by a soldier to avoid casualties.  
+•	Our system has shown the possibility that interaction with machines through gestures is a feasible task and the set of detected gestures could be enhanced to more commands by implementing a more complex model of an advanced
+vehicle for not only in limited space while also in the broader area as in the roads too.  
+•	In the future, service robot executing many different tasks from private movement to a full-fledged advanced 
+automotive that can make disabled to able in all sense 
+  
+IX. 	CONCLUSION AND FUTURE WORK 
+  
+In this paper, we introduced a hand-gesture-based interface for navigating a car-robot. A user can control a car-robot directly by using his or her hand trajectories. In the future, we will directly use a mobile phone with 
+an accelerometer to control a car-robot. We also want to add more hand gestures (such as the curve and slash) into the interface to control the car more naturally and effectively. 
+ 
+ 
+CODE :
 
 int xPin=A0;
 int yPin=A1;
@@ -69,3 +165,4 @@ void loop()
     }
   }
 }
+
